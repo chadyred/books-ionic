@@ -1,0 +1,4 @@
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="Login" tabIcon="person"></ion-tab>
+  <ion-tab *ngIf="auth.authenticated()" [root]="tab2Root" tabTitle="BareCode" tabIcon="home"></ion-tab>
+</ion-tabs>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+        <form *ngIf="!auth.authenticated()" #f="ngForm" (ngSubmit)="onSubmit(f)">
+           <ion-item>
+              <ion-label  color="primary" stacked>Pseudo</ion-label>
+              <ion-input type="text" name="pseudo" placeholder="Pseudo Input"  ngModel></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="primary" stacked>Password</ion-label>
+              <ion-input type="password" name="password" placeholder="Password Input" ngModel></ion-input>
+            </ion-item>
+          
+          <button ion-button type="submit" block>Connection</button>     
+      </form>
+      <div *ngIf="auth.authenticated()">
+        <div padding>
+          <h1>Welcome, {{ user }}</h1>
+          <button block (click)="logout()">Logout</button>
+        </div>
+      </div>
+  </ion-list>
+
+</ion-content>

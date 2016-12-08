@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Barcode
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+           <ion-item>
+              <ion-label  color="primary" stacked>Code barre</ion-label>
+              <ion-input type="text" name="barcode" placeholder="Barcode Input" ngModel></ion-input>
+            </ion-item>
+          
+          <button ion-button type="submit" block>Controle code barre</button>     
+      </form>
+  </ion-list>
+
+
+    <ion-list>
+
+      <ion-item *ngIf="result">
+        <h2>{{result.title}}</h2>
+      </ion-item>
+
+      <ion-item *ngIf="!result">
+        <h2>Pas de résultat</h2>
+      </ion-item>
+    </ion-list>
+
+</ion-content>
